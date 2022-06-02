@@ -29,3 +29,44 @@
 * JDK = JRM + 开发工具集（例如：javac、java编译工具等）
 * JRE = JVM + javaSE标椎类库（java核心类库）
 * JDK = JVM + JavaSE标椎类库 + 开发工具集
+
+### java开发注意事项和细节说明
+
+* 一个源文件中最多只能有一个 public 类，其他类的个数不限
+* 如果源文件包含一个 public 类，则文件名必须按该类名命名
+* 一个源文件中最多只能有一个 public 类，其他类的个数不限，也可以将 main 方法写在非 public类中，然后指定运行非 public 类，这样入口方法就是非 public 的 main 方法
+
+```java
+public class Hello {
+  public static void main(String[] args) {
+    System.out.println("你好");
+  }
+}
+
+class Ww {
+  public static void main(String[] args) {
+    System.out.println("你好 Ww");
+  }
+}
+
+class Dwj {
+  public static void main(String[] args) {
+    System.out.println("你好 邓文杰");
+  }
+}
+```
+
+### 转义字符
+
+```java
+public class ChangeChar {
+  public static void main(String[] args) {
+    System.out.println("上海\t北京\t重庆\t天津");
+    System.out.println("上海\n北京\n重庆\n天津");
+    System.out.println("上海\\北京\\重庆\\天津");
+    System.out.println("上海\"北京\"重庆\"天津");
+    System.out.println("你好啊\r上海"); // 上海啊
+    System.out.println("姓名\t年龄\t性别\n邓文杰\t22\t男");
+  }
+}
+```
