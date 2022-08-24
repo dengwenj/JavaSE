@@ -18,4 +18,4 @@ public class Var {
     System.out.println(num);
   }
 }
- 
+// 字节可以理解计算机的一个比较小的数据单位  数据类型不一样 占用的空间大小不一样
