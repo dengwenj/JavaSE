@@ -107,3 +107,34 @@ int n2 = 20 // 在内存中占用了4个字节，空间占用的多
 * java的整型常量（具体值）默认为int型，声明long型常量须后加 'l' 或 'L'
 * java 程序中变量常声明为int型，除非不足以表示大数，才使用long
 * bit：计算机中的最小存储单位。byte：计算机中基本存储单位，1byte = 8bit。
+
+```java
+public class IntDetail {
+  public static void main(String[] args) {
+    int n = 2; // 4 个字节
+    // int n1 = 20L; // 报错
+    long n2 = 20L;
+    System.out.println(n2);
+    System.out.println(n);
+  }
+}
+```
+
+**浮点类型**
+
+* 关于浮点数在机器中存放形式。浮点数 = 符号位 + 指数位 + 尾数位
+* 尾数部分可能丢失，造成精度损失（小数都是近似值）
+
+* java的浮点型常量默认为double型，声明float型常量，须后加 'f' 或 'F'
+* 浮点型常量有两种表示形式。十进制数形式：如：5.12 、 .512（必须有小数点）
+* 科学计数法形式：5.12e2 、5.12E-2
+* 通常情况下，应该使用double型，因为它比 float型更精确
+* Float(单精度 4个字节)、double(双精度 8个字节)
+
+```java
+double num = 2.1234567851;
+float num1 = 2.1234567851F;
+System.out.println(num); // 2.1234567851
+System.out.println(num1); // 2.1234567
+```
+
