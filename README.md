@@ -136,5 +136,16 @@ double num = 2.1234567851;
 float num1 = 2.1234567851F;
 System.out.println(num); // 2.1234567851
 System.out.println(num1); // 2.1234567
+
+double num11 = 2.7;
+double num22 = 8.1 / 3; // 不是 2.7 是 2.69999999999
+
+if(num11 == num22) {
+  System.out.println('相等');
+}
+
+if(Math.abs(num11 - num22) < 0.000001) {
+  System.out.println('差值非常小，到规定精度，认为相等');
+}
 ```
 
