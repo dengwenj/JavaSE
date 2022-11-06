@@ -9,6 +9,7 @@ public class Char01 {
     System.out.println(c2);
     System.out.println(c3);
 
+    // 字符占2个字节因为用的 unicode 编码
     // 1、字符常量是用单引号'' 括起来的单个字符。
     // 在 java 中，char 的本质是一个整数，在输出时，是 unicode 码对应的字符。
     // 可以直接给 char 赋一个整数，然后输出时，会按照对应的 unicode 字符输出
