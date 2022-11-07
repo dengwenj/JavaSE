@@ -279,6 +279,13 @@ public class ArithmeticOperator {
     int k = j++; // 等价 k = j; j = j + 1;
     System.out.println(j); // 3, 2
     System.out.println(k); // 3, 2
+    
+    int i = 1;
+    i = i++; // (1) temp = i; (2) i = i + 1; (3) i = temp
+    System.out.println(i); // 1
+    int h = 1;
+    h = ++h; // (1) h = h + 1; (2) temp = h; (3) h = temp
+    System.out.println(h); // 2
   }
 }
 ```
