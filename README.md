@@ -529,7 +529,7 @@ public class BitOperation {
 **三大流程控制语句**
 
 * 顺序控制
-* 分支控制（让程序有选择的执行）
+* 分支控制（让程序有选择的执行）(ifelse、switch)
 * 循环控制
 
 **只要是个表达式就有一个值返回**
@@ -542,5 +542,41 @@ public class BitOperation {
 * default是可选的
 * break语句用来在执行完一个 case 分支后使程序跳出 switch 语句块，如果没有写 break，程序会顺序执行到 switch 结尾
 
+**for循环**
 
+* for 有四要素：1、循环变量初始化。2、循环条件。3、循环操作。4、循环变量迭代
+* 循环条件是返回一个布尔值的表达式
+* for(;循环判断条件;)中的初始化和变量迭代可以写到其他地方，但是两边的分号不能省略
+* 循环初始值可以有多条初始化语句，但要求类型一样，并且中间用逗号隔开，循环变量迭代也可以有多条变量迭代语句，中间用逗号隔开
+
+```java
+public class For01 {
+  public static void main(String[] args) {
+    //       1             2        4
+    // for(循环变量初始化; 循环条件; 循环变量迭代) {
+    //       3 
+    //   循环操作(可以多条语句);
+    // }
+
+    int num = 0;
+    int total = 0;
+    for(int i = 1; i <= 100; i++) {
+      if(i % 9 == 0) {
+        num++;
+        total += i;
+      }
+    }
+    System.out.println("个数是: " + num + " 总和是: " + total);
+
+    for(int i = 0, j = 5; i <= 5; i++, j--) {
+      System.out.println(i + "+" + j + "=" + (i + j));
+    }
+
+    int n = 10;
+    for(int i = 0; i <= n; i++) {
+      System.out.println(i + "+" + (n - i) + "=" + n);
+    }
+  }
+}
+```
 
