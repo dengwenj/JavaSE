@@ -42,13 +42,13 @@ public class DoWhile01 {
     boolean b = false;
     do{
       System.out.println("返钱吗?");
-      String s = myScanner.next();
-      System.out.println(s + "jkqjk");
-      if(s == "y") {
-        b = true;
-      } else {
+      char c = myScanner.next().charAt(0);
+      if(c == 'y') {
+        System.out.println("1828289jj");
         b = false;
+      } else {
+        b = true;
       }
-    } while(b); // b 为 true 就退出循环
+    } while(b); // b 为 false 就退出循环
   }
 }

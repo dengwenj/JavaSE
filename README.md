@@ -545,7 +545,7 @@ public class BitOperation {
 **for循环**
 
 * for 有四要素：1、循环变量初始化。2、循环条件。3、循环操作。4、循环变量迭代
-* 循环条件是返回一个布尔值的表达式
+* 循环条件是返回一个布尔值的表达式，为 false 就退出循环
 * for(;循环判断条件;)中的初始化和变量迭代可以写到其他地方，但是两边的分号不能省略
 * 循环初始值可以有多条初始化语句，但要求类型一样，并且中间用逗号隔开，循环变量迭代也可以有多条变量迭代语句，中间用逗号隔开
 
@@ -582,7 +582,7 @@ public class For01 {
 
 **While循环**
 
-* 循环条件是返回一个布尔值的表达式
+* 循环条件是返回一个布尔值的表达式，为 false 就退出循环
 * while 循环是先判断再执行语句
 
 ```java
@@ -617,7 +617,7 @@ public class While01{
 
 **do..while**
 
-* 循环条件是返回一个布尔值的表达式
+* 循环条件是返回一个布尔值的表达式，为 false 就退出循环
 * do..while 循环是先执行，再判断，因此它至少执行一次
 
 ```java
@@ -665,14 +665,13 @@ public class DoWhile01 {
     boolean b = false;
     do{
       System.out.println("返钱吗?");
-      String s = myScanner.next();
-      System.out.println(s + "jkqjk");
-      if(s == "y") {
-        b = true;
-      } else {
+      char c = myScanner.next().charAt(0);
+      if(c == "y") {
         b = false;
+      } else {
+        b = true;
       }
-    } while(b); // b 为 true 就退出循环
+    } while(b); // b 为 false 就退出循环
   }
 }
 ```
@@ -684,36 +683,55 @@ import java.util.Scanner;
 
 public class DoubleFor {
   public static void main(String[] args) {
-    int class1 = 3; // 班
-    int student = 5; // 每个班学生
-    double allClassScore = 0; // 所有班级分数
-    int jg = 0; // 及格人数
-    Scanner myScanner = new Scanner(System.in);
+    // int class1 = 3; // 班
+    // int student = 5; // 每个班学生
+    // double allClassScore = 0; // 所有班级分数
+    // int jg = 0; // 及格人数
+    // Scanner myScanner = new Scanner(System.in);
 
-    for(int i = 1; i <= class1; i++) {
-      double sum = 0; // 每个班的成绩
-      for(int j = 1; j<= student; j++) {
-        System.out.println("请输入第" + i + "个班级第" + j + "个学生的成绩: ");
-        double score = myScanner.nextDouble();
-        if(score >= 60) {
-          jg++;
-        }
-        sum += score;
-      }
-      allClassScore += sum;
-      System.out.println(i + "班的总分数是: " + sum + ", 平均分数是: " + (sum / student));
-    }
-    System.out.println("所有班级总分是: " + allClassScore + ", 所有平均分是: " + 
-      (allClassScore / (class1 * student)) + "及格人数为: " + jg);
+    // for(int i = 1; i <= class1; i++) {
+    //   double sum = 0; // 每个班的成绩
+    //   for(int j = 1; j<= student; j++) {
+    //     System.out.println("请输入第" + i + "个班级第" + j + "个学生的成绩: ");
+    //     double score = myScanner.nextDouble();
+    //     if(score >= 60) {
+    //       jg++;
+    //     }
+    //     sum += score;
+    //   }
+    //   allClassScore += sum;
+    //   System.out.println(i + "班的总分数是: " + sum + ", 平均分数是: " + (sum / student));
+    // }
+    // System.out.println("所有班级总分是: " + allClassScore + ", 所有平均分是: " + 
+    //   (allClassScore / (class1 * student)) + "及格人数为: " + jg);
 
-    // 99 乘法表
-    for(int i = 1; i <= 9; i++) { // 前面那个数
+    // // 99 乘法表
+    // for(int i = 1; i <= 9; i++) { // 前面那个数
+    //   String s = "";
+    //   for(int j = 1; j <= i; j++) {
+    //     s += j + "×" + i + "=" + (i * j) + " ";
+    //   }
+    //   System.out.println(s);
+    // }
+
+    // 金字塔
+    int total = 5;
+    for(int i = 1; i <= total; i++) { // 每一层
       String s = "";
-      for(int j = 1; j <= i; j++) {
-        s += j + "×" + i + "=" + (i * j) + " ";
+      String s1 = "";
+      for(int k = 1; k <= total - i; k++) { // 空格
+        s1 += " ";
       }
-      System.out.println(s);
+      for(int j = 1; j <= 2 * i - 1; j++) {
+        if(j == 1 || j == 2 * i - 1 || i == total) {
+          s += "*";
+        } else {
+          s += " ";
+        }
+      }
+      System.out.println(s1 + s);
     }
+    
   }
 }
 ```
