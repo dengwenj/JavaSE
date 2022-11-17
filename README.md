@@ -205,7 +205,7 @@ public class Char01 {
 
 * 当进行数据的大小从 大 -> 小，就需要使用到强制转换
 * 强制符号只针对于最近的操作数有效，往往会使用小括号提升优先级
-*  char 类型可以保存 int 的常量值，但不能保存 int 的变量值，需要转换
+*  char 类型可以保存 int 的常量值，但不能保存 int 的变量值，需要转换 (char)(i+'A')
 * byte 和 short char 类型在进行运算时，当做 int 类型处理
 
 **自动类型转换精度小的转大的** **char -> int -> long -> float -> double**     **byte -> short -> int -> long -> float -> double**

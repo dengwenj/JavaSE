@@ -12,22 +12,39 @@ public class Array01 {
     // 动态初始化
     // 数组定义
     // 数据类型 数组名[] = new 数据类型[大小]
-    double[] arr1 = new double[3]; // new double[3]; 分配空间
-    Scanner myScanner = new Scanner(System.in);
-    for(int i = 0; i < arr1.length; i++) {
-      double d = myScanner.nextDouble();
-      arr1[i] = d;
-    }
-    for(int j = 0; j < arr1.length; j++) {
-      System.out.println(arr1[j]);
-    }
-    // 声明数组，这时 arr2 是 null
-    double arr2[];
-    // 分配内存空间，可以存放数据。new了过后才分配空间
-    arr2 = new double[4];
+    // double[] arr1 = new double[3]; // new double[3]; 分配空间
+    // Scanner myScanner = new Scanner(System.in);
+    // for(int i = 0; i < arr1.length; i++) {
+    //   double d = myScanner.nextDouble();
+    //   arr1[i] = d;
+    // }
+    // for(int j = 0; j < arr1.length; j++) {
+    //   System.out.println(arr1[j]);
+    // }
+    // // 声明数组，这时 arr2 是 null
+    // double arr2[];
+    // // 分配内存空间，可以存放数据。new了过后才分配空间
+    // arr2 = new double[4];
 
-    // 静态初始化
-    // 数据类型 数组名[] = {元素, 元素}
-    double[] arr3 = {1.2, 4.3};
+    // // 静态初始化
+    // // 数据类型 数组名[] = {元素, 元素}
+    // double[] arr3 = {1.2, 4.3};
+
+    // char[] arr4 = new char[26];
+    // for(int i1 = 0; i1 < arr4.length; i1++) {
+    //   arr4[i1] = (char)('A' + i1);
+    //   System.out.println(arr4[i1]);
+    // }
+
+    int[] arr = {1, 3, 66, 11, 34};
+    int max = arr[0];
+    int idx = 0;
+    for(int i = 0; i < arr.length; i++) {
+      if(max < arr[i]) {
+        max = arr[i];
+        idx = i;
+      }
+    }
+    System.out.println(max + " " + idx);
   }
 }
