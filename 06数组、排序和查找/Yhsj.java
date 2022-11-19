@@ -7,8 +7,9 @@ public class Yhsj {
       arr[i] = new int[i + 1];
       for(int j = 0; j < arr[i].length; j++) {
         if(j == 0 || j == arr[i].length - 1) {
-          arr[i][0] = 1;
-          arr[i][arr[j].length - 1] = 1;
+          // arr[i][0] = 1;
+          // arr[i][arr[j].length - 1] = 1;
+          arr[i][j] = 1;
         } else {
           // 杨辉三角规律
           // 1 
