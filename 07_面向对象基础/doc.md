@@ -102,6 +102,14 @@ p.age = 10;
 
 **成员方法**
 
+* 访问修饰符（作用是控制方法使用的范围）
+* 如果不写默认访问，（四种：public、protected、默认、private）
+* 一个方法最多有一个返回值，返回多个结果可以用数组
+* 返回类型可以为任意类型，包含基本类型或引用类型
+* 如果方法要求有返回数据类型，则方法体中最后的执行语句必须为 return 值；而且要求返回值类型必须和 return 的值类型一致或兼容
+* 如果方法是 void，则方法体中可以没有 return 语句，或者只写 return
+* 方法名一般为驼峰命名法
+
 ```java
 public class Method {
   public static void main(String[] args) {
@@ -113,6 +121,11 @@ public class Method {
     p.sum();
     p.sum1(10);
     System.out.println(p.sum2(100, 200));
+  }
+  
+  访问修饰符 返回数据类型(void 表示没有返回值) 方法名(形参列表){方法体
+    语句;
+    return 返回值;                    
   }
 }
 

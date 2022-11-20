@@ -13,6 +13,11 @@ public class Method01 {
     m.map(map);
     m.map(map);
     m.map(map);
+
+    Demo d = new Demo();
+    int[] arr1 = d.getSum(10, 5);
+    System.out.println(arr1[0]); // 15
+    System.out.println(arr1[1]); // 5
   }
 }
 
@@ -24,5 +29,14 @@ class MyTools {
       }
       System.out.println();
     }
+  }
+}
+
+class Demo {
+  public int[] getSum(int n1, int n2) {
+    int[] arr = new int[2];
+    arr[0] = n1 + n2;
+    arr[1] = n1 - n2;
+    return arr;
   }
 }
