@@ -20,7 +20,7 @@ public class Object01 {
 }
 
 class Cat {
-  String name;
+  String name; // 属性，成员变量，字段
   int age;
   String color;
 }
