@@ -1,5 +1,8 @@
 **类与对象**
 
+* 类式抽象的，概念的，代表一类事物，比如人类，猫类，即它是数据类型(自定义数据类型 Cat)
+* 比如：Person 类 是引用数据类型  Person p = new Person();
+
 ```java
 public class Object01 {
   public static void main(String[] args) {
@@ -199,6 +202,39 @@ class A {
 class B {
   public void bb() {
     System.out.println("我是 B 类的 bb 方法");
+  }
+}
+```
+
+**成员方法传递机制(重要！！！！)**
+
+* 基本数据类型，传递的是值（值拷贝），形参的任何改变不影响实参
+* 引用类型传递的是地址（传递也是值，但是值是地址），可以通过形参影响实参
+
+```java
+public class MethodParameter {
+  public static void main(String[] args) {
+    AA a = new AA();
+    
+    Person p = new Person();
+    p.name = "dengwenj";
+    p.age = 22;
+
+    a.test(p);
+    System.out.println(p.age); // 23
+  }
+}
+
+class Person {
+  String name;
+  int age;
+}
+
+class AA {
+  // 形参传递的是对象
+  // 引用类型传递的是地址（传递也是值，但是值是地址），可以通过形参影响实参
+  public void test(Person p) {
+    p.age = 23;
   }
 }
 ```
