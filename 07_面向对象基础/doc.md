@@ -63,3 +63,23 @@ class Cat {
 * 1、先声明再创建 Cat cat;  cat = new Cat();
 * 2、直接创建 Cat cat = new Cat();
 * 访问属性：对象名.属性名
+
+```java
+public class Object02 {
+  public static void main(String[] args) {
+    // cat1 是对象名（对象引用）
+    // new Cat(); 创建的对象空间（数据）才是真正的对象
+    Person p = new Person();
+		p.age = 1;
+    p.name = "哈哈";
+    Person p1 = p;
+    System.out.println(p1.age);//1
+  }
+}
+
+class Person {
+  String name; // 属性，成员变量，字段
+  int age;
+}
+```
+
