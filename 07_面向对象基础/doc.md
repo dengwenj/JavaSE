@@ -249,3 +249,47 @@ class AA {
 * 如果方法中使用的是引用类型变量（比如数组），就会共享该引用类型的数据（形参）
 * 递归必须向退出递归的条件逼近，否则就是无限递归
 * 当一个放大执行完毕，或者遇到 return，就会返回，遵守谁调用，就将结果返回给谁，同时当方法执行完毕或者返回时，该方法也就执行完毕（释放掉）
+
+```java
+public class Demo03 {
+  public static void main(String[] args) {
+    // 斐波那锲数  1 1 2 3 5 8 13
+    Test test = new Test();
+    // System.out.println(test.t(5));
+
+    System.out.println(test.hh(1)); // 1534
+  }
+}
+
+class Test {
+  public int t(int n) {
+    if(n <= 2) {
+      return 1;
+    }
+    return t(n - 1) + t(n  - 2);
+  }
+
+  // day = 10 时有 1 个桃子
+  // day = 9 时有 （day10 + 1） * 2 = 4
+  // day = 8 时有（day9 + 1） * 2 = 10
+  // 前一天的桃子 = （后一天的桃子 + 1） * 2
+  public int hh(int day) {
+    // 第十天
+    if(day == 10) { // 第一天是刚开始的个数
+      return 1;
+    }
+    return (hh(day + 1) + 1) * 2;
+  }
+}
+
+// hh(1) * 2 + 1 // 15
+// hh(2) * 2 + 1 // 7
+// hh(3) * 2 + 1 // 3
+// 1
+
+// t(4) -> 3 + t(3) -> 2   5
+// t(3) -> 2 + t(2) -> 1   4
+// t(2) -> 1 + t(1) -> 1   3
+//             2
+```
+
