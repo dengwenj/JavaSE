@@ -41,7 +41,7 @@ class T {
     if(map[6][5] == 2) {
       return true;
     }
-    
+
     if(map[i][j] == 0) {
       // 假设可以走
       map[i][j] = 2;
@@ -60,6 +60,16 @@ class T {
       }
     } else { // map[i][j] = 1, 2, 3
       return false;
+    }
+  }
+
+  public void move(int num, char a, char b, char c) {
+    if(num == 1) {
+      System.out.println(a + "->" + c);
+    } else {
+      move(num - 1, a, c, b);
+      System.out.println(a + "->" + c);
+      move(num - 1, b, a, c);
     }
   }
 }
