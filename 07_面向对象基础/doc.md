@@ -499,8 +499,60 @@ Person p = new Person("韩没灭", 20);
 
 // 流程分析
 //1、加载Person类信息（Person.class），只会加载一次（属性和方法）
-//2、在堆中分配空间（创建对象）
+//2、在堆中分配空间（创建对象）this会指向这个对象
 //3、完成对象初始化（默认初始化：age = 0; name = null 显式初始化：age = 90; name = null 构造器初始化：age = 20; name = "韩没灭"）
 //4、对象在堆中的地址，返回给 p(p是对象名，对象的引用)
+```
+
+**this**
+
+* java 虚拟机会给每个对象分配 this,代表当前对象
+* 哪个对象调用，this就代表那个对象
+* this关键字可以用来访问本类的属性、方法、构造器
+* this用于区分当前类的属性和局部变量
+* 访问成员方法的语法：this.方法名(参数列表)
+* 访问构造器语法：this(参数列表)，注意只能在构造器中使用（即只能在构造器中访问另外一个构造器，必须放在第一条语句）
+* this不能在类定义的外部使用，只能在类定义的方法中使用
+
+```java
+public class This {
+  public static void main(String[] args) {
+    Person p = new Person("等你文件", 23);
+    System.out.println(p.name);
+    System.out.println(p.name);
+    System.out.println(p.hashCode());
+
+    Person p1 = new Person();
+    p1.f1();
+  }
+}
+
+class Person {
+  String name;
+  int age = 22;
+
+  public Person(String name, int age) {
+    this.name = name;
+    this.age = age;
+    System.out.println("this.hashCode()" + this.hashCode());
+  }
+
+  public Person() {
+    this("韩梅梅", "王小波");
+    System.out.println("this() 只能在第一句使用");
+  }
+
+  public Person(String name1, String name2) {
+    System.out.println(name1 + name2);
+  }
+
+  public void f() {
+    System.out.println(this.name + " f方法"); // null
+  }
+
+  public void f1() {
+    this.f();
+  }
+}
 ```
 
