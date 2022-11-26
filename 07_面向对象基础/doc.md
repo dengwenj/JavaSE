@@ -403,17 +403,34 @@ class Demo {
 
 **可变参数**
 
+* 可变参数的实参可以为0个或任意多个
+* 可变参数的实参可以为数组
+* 可变参数的本质就是数组
+* 可变参数可以和普通类型的参数一起放在形参列表，但必须保证可变参数在最后
+* 一个形参列表中只能出现一个可变参数
+
 ```java
 public class HSPMethod {
   public static void main(String[] args) {
     // java 允许将同一个类中多个同名同功能但参数个数不同的方法，封装成一个方法，就可以通过可变参数实现
     Demo d = new Demo();
-    System.out.println(d.d1(1, 2, 3, 4, 5));
-    System.out.println(d.d1(1, 2, 3, 4, 5, 10));
+    // System.out.println(d.d1(1, 2, 3, 4, 5));
+    // System.out.println(d.d1(1, 2, 3, 4, 5, 10));
+
+    Demo obj = d.showScore("邓文杰", 70, 80, 90);
+    System.out.println(obj.name);
+    System.out.println(obj.score);
+    
+    Demo obj1 = d.showScore("韩梅梅", 71, 81, 91);
+    System.out.println(obj1.name);
+    System.out.println(obj1.score);
   }
 }
 
 class Demo {
+  String name;
+  int score;
+
   // int... 表示接收的是可变参数，类型是 int，即可以接收多个 int(0 - 多)
   // 使用可变参数时，可以当做数组来使用，即 nums 可以当做数组
   public int d1(int... nums) {
@@ -423,6 +440,18 @@ class Demo {
       sum += nums[i];
     }
     return sum;
+  }
+
+  public Demo showScore(String name, int... score) {
+    int sum = 0;
+    for(int i = 0; i < score.length; i++) {
+      sum += score[i];
+    }
+
+    Demo d = new Demo();
+    d.name = name;
+    d.score = sum;
+    return d;
   }
 }
 ```
