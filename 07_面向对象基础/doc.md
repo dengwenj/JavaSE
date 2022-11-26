@@ -324,7 +324,7 @@ public class Demo04 {
     System.out.println("============================");
     T t1 = new T();
     t1.findWay(map, 1, 1);
-
+  
     for(int i = 0; i < map.length; i++) {
       for(int j = 0; j < map[i].length; j++) {
         System.out.print(map[i][j] + " ");
@@ -359,6 +359,44 @@ class T {
     } else { // map[i][j] = 1, 2, 3
       return false;
     }
+  }
+}
+```
+
+**重载**
+
+* java 中允许同一个类中，多个同名方法的存在，但要求形参列表不一致！！
+* 方法名：必须相同
+* 形参列表：必须不同（形参类型或个数或顺序，至少有一样不同，参数名无要求）
+* 返回类型：无要求
+
+```java
+public class OverLoad01 {
+  public static void main(String[] args) {
+    // java 中允许同一个类中，多个同名方法的存在，但要求形参列表不一致！！
+    // 重载的好处
+    // 1、减轻了起名的麻烦
+    // 2、减轻了记名的麻烦
+
+    Demo d = new Demo();
+    System.out.println(d.calculate(1, 2));
+
+    System.out.println(d.calculate(1.1, 2));
+
+    System.out.println(d.calculate(1, 2, 3));
+  }
+}
+
+class Demo {
+  // calculate 方法构成了重载
+  public int calculate(int a, int b) {
+    return a + b;
+  }
+  public double calculate(double a, int b) {
+    return a + b;
+  }
+  public int calculate(int a, int b, int c) {
+    return a + b + c;
   }
 }
 ```
