@@ -6,23 +6,37 @@ public class OverLoad01 {
     // 2、减轻了记名的麻烦
 
     Demo d = new Demo();
-    System.out.println(d.calculate(1, 2));
+    // System.out.println(d.calculate(1, 2));
 
-    System.out.println(d.calculate(1.1, 2));
+    // System.out.println(d.calculate(1.1, 2));
 
-    System.out.println(d.calculate(1, 2, 3));
+    // System.out.println(d.calculate(1, 2, 3));
+
+    System.out.println(d.d1(1, 2));
+    System.out.println(d.d1(1.1, 2.1, 3.1));
+    System.out.println(d.d1(1.3, 2.3));
   }
 }
 
 class Demo {
   // calculate 方法构成了重载
-  public int calculate(int a, int b) {
-    return a + b;
+  // public int calculate(int a, int b) {
+  //   return a + b;
+  // }
+  // public double calculate(double a, int b) {
+  //   return a + b;
+  // }
+  // public int calculate(int a, int b, int c) {
+  //   return a + b + c;
+  // }
+
+  public int d1(int a, int b) {
+    return a > b ? a : b;
   }
-  public double calculate(double a, int b) {
-    return a + b;
+  public double d1(double a, double b, double c) {
+    return a > b ? (a > c ? a : c) : (b > c ? b : c);
   }
-  public int calculate(int a, int b, int c) {
-    return a + b + c;
+  public double d1(double a, double b) {
+    return a > b ? a : b;
   }
 }
