@@ -27,9 +27,12 @@ class Demo2 {
   int age;
 
   Demo2(String name, String sex, int age) {
-    this.name = name;
+    // this.name = name;
+    // this.age = age;
+    // this.sex = sex;
+    this(name, sex); // 复用，调用构造器
     this.age = age;
-    this.sex = sex;
+
     System.out.println(this.name);
     System.out.println(this.sex);
     System.out.println(this.age);

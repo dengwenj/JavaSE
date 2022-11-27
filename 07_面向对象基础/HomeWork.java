@@ -17,12 +17,16 @@ public class HomeWork {
 }
 
 class A01 {
-  public double max(double... nums) {
-    double m = nums[0];
-    for(int i = 0; i < nums.length; i++) {
-      m = m > nums[i] ? m : nums[i];
+  public Double max(double... nums) {
+    // Double类是可以赋 null 的
+    if(nums != null && nums.length > 0) {
+      double m = nums[0];
+      for(int i = 0; i < nums.length; i++) {
+        m = m > nums[i] ? m : nums[i];
+      }
+      return m;
     }
-    return m;
+    return null;
   }
 
   public int findIndex(String[] strs) {
