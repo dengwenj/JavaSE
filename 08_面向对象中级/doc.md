@@ -7,6 +7,7 @@
 * 控制访问范围
 * 包基本语法：package com.dengwenj;，package  关键字，表示打包。com.dengwenj:表示包名
 * 包的本质实际上就是创建不同的文件夹来保存类文件
+* 同一个包下可以不引入
 
 **包的命名**
 
@@ -54,3 +55,9 @@ public class Person {
 * 2、受保护级别：用protected修饰，对子类和同一个包中的类公开
 * 3、默认级别：没有修饰符号，向同一个包的类公开
 * 4、私有级别：用 private 修饰，只有类本身可以访问，不对外公开
+
+* 在同一类中，可以访问 public protected 默认 private 修饰属性和方法
+* 在同一个包下，可以访问 public protected 和默认修饰属性或方法，不能访问 private属性或方法
+* 在不同包下，可以访问 public 修饰的属性或方法，但是不能访问 protected，默认，private修饰的属性或方法
+* 修饰符可以用来修饰类中的属性，成员方法，以及类
+* 只有默认的和 public 才能修饰类，并且遵循上述访问权限的特点
