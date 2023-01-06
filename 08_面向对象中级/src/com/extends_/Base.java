@@ -8,7 +8,11 @@ public class Base {
 
   // 无惨构造器
   public Base() {
-
+    System.out.println("我是父类的无惨构造器");
+  }
+//  有参构造器
+  public Base(String name, int age) {
+    System.out.println("姓名" + name + "年龄" + age);
   }
 
   public int getN4() {
