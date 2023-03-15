@@ -16,6 +16,7 @@ public class Sub extends Base {
 //  无惨构造器
   public Sub() {
     super("dengwenjie", 23);
+//    this("zww"); // 不能同时使用
     System.out.println("先调用父类在调用子类");
   }
 
